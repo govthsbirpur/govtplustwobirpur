@@ -9,6 +9,266 @@
     <link rel="stylesheet" href="home.css">
     <link rel="icon" href="download.png" type="image/x-icon">
     <title>Government +2 High School, Birpur</title>
+    <style>
+        .site-footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 0 0;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+        
+        .footer-section h3 {
+            color: #f39c12;
+            margin-bottom: 15px;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #bdc3c7;
+            line-height: 1.6;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #f39c12;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .social-icon {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+            line-height: 35px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: #f39c12;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #1a252f;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-section {
+                flex: 100%;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+
+    <style>
+        .login-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .login-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        @media (max-width: 768px) {
+            .login-btn {
+                margin: 10px 0;
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+
+    <style>
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            background-color: white;
+            transition: all 0.3s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: #1e4d92;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 80px;
+                transition: 0.3s ease-in-out;
+                z-index: 1000;
+            }
+
+            .menu.active {
+                right: 0;
+            }
+
+            .menu li {
+                margin: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .dropdown-menu, .sub-dropdown-menu {
+                position: static;
+                display: none;
+                width: 100%;
+                box-shadow: none;
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+
+            .dropdown:hover > .dropdown-menu,
+            .sub-dropdown:hover > .sub-dropdown-menu {
+                display: none;
+            }
+
+            .dropdown.active > .dropdown-menu,
+            .sub-dropdown.active > .sub-dropdown-menu {
+                display: block;
+            }
+        }
+    </style>
+
+    <style>
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .school-info {
+            text-align: center;
+            width: 100%;
+        }
+
+        .school-info h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+        .hamburger {
+            position: absolute;
+            top: 30px;
+            right: 20px;
+        }
+
+        @media (min-width: 993px) {
+            .header-content {
+                flex-direction: row;
+                text-align: left;
+                position: relative;
+            }
+            .logo-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .school-info {
+                text-align: left;
+            }
+            .hamburger {
+                display: none;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .header-content {
+                padding-bottom: 50px; /* Space for hamburger */
+            }
+            .school-info h1 {
+                font-size: 1.5em;
+                margin-top: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .school-info h1 {
+                font-size: 1.3em;
+            }
+            .school-info p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -137,25 +397,24 @@
                 <a target="_blank" href="volly.jpg">
                     <img src="volly.jpg" alt="Image 1">
                 </a>
-                <a target="_blank" href="volly-2.jpg">
+                <a target="_blank" href="image/volly-2.jpg">
                     <img src="volly-2.jpg" alt="Image 2">
                 </a>
-                <a target="_blank" href="rd-1.jpg">
-                    <img src="rd-1.jpg" alt="Image  3">
-                </a>
-                <a target="_blank" href="rd-2.jpg">
+                <a target="_blank" href="image/rd-1.jpg">
+                    <img src="rd-1.jpg" alt="Image  3">               </a>
+                <a target="_blank" href="image/rd-2.jpg">
                     <img src="rd-a.jpg" alt="Image 4">
                 </a>
-                <a target="_blank" href="flower-1.jpg">
+                <a target="_blank" href="image/flower-1.jpg">
                     <img src="flower-1.jpg" alt="Image 1">
                 </a>
-                <a target="_blank" href="school2.jpg">
-                    <img src="image/school2.jpg" alt="Image 2">
+                <a target="_blank" href="image/school2.jpg">
+                    <img src="school2.jpg" alt="Image 2">
                 </a>
-                <a target="_blank" href="rd-b.jpg">
+                <a target="_blank" href="image/rd-b.jpg">
                     <img src="rd-b.jpg" alt="Image 2">
                 </a>
-                <a target="_blank" href="rd-c.jpg">
+                <a target="_blank" href="image/rd-c.jpg">
                     <img src="rd-c.jpg" alt="Image 2">
                 </a>
             </div>
@@ -282,327 +541,6 @@
         </div>
     </footer>
 
-    <style>
-        .site-footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 40px 0 0;
-            margin-top: 40px;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-            margin-bottom: 20px;
-            padding: 0 15px;
-        }
-        
-        .footer-section h3 {
-            color: #f39c12;
-            margin-bottom: 15px;
-        }
-        
-        .footer-section p, .footer-section a {
-            color: #bdc3c7;
-            line-height: 1.6;
-            text-decoration: none;
-        }
-        
-        .footer-section a:hover {
-            color: #f39c12;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .social-icon {
-            display: inline-block;
-            width: 35px;
-            height: 35px;
-            background-color: #34495e;
-            color: #fff;
-            text-align: center;
-            line-height: 35px;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            background-color: #f39c12;
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding: 15px 0;
-            background-color: #1a252f;
-            margin-top: 20px;
-        }
-        
-        @media (max-width: 768px) {
-            .footer-section {
-                flex: 100%;
-                text-align: center;
-            }
-            
-            .social-links {
-                justify-content: center;
-            }
-        }
-    </style>
-
-    <style>
-        .login-btn {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            margin-left: 10px;
-            transition: background-color 0.3s;
-        }
-        
-        .login-btn:hover {
-            background-color: #2980b9;
-        }
-        
-        @media (max-width: 768px) {
-            .login-btn {
-                margin: 10px 0;
-                display: block;
-                text-align: center;
-            }
-        }
-    </style>
-
-    <style>
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 1001;
-        }
-
-        .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
-            transition: all 0.3s ease-in-out;
-            background-color: #fff;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            width: 100%;
-            justify-content: space-between;
-        }
-
-        @media (max-width: 992px) {
-            .hamburger {
-                display: block;
-            }
-
-            .hamburger.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active .bar:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-
-            .hamburger.active .bar:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-
-
-            .menu {
-                position: fixed;
-                left: -100%;
-                top: 0;
-                gap: 0;
-                flex-direction: column;
-                background-color: #1e4d92;
-                width: 80%;
-                height: 100vh;
-                text-align: left;
-                transition: 0.3s;
-                padding: 100px 20px 20px;
-                z-index: 1000;
-                overflow-y: auto;
-            }
-
-            .menu.active {
-                left: 0;
-            }
-
-            .menu li {
-                margin: 15px 0;
-                width: 100%;
-            }
-
-            .menu li a {
-                padding: 12px 15px;
-                display: block;
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            .dropdown-menu, .sub-dropdown-menu {
-                position: static;
-                display: none;
-                width: 100%;
-                box-shadow: none;
-                padding-left: 20px;
-                background-color: rgba(255, 255, 255, 0.1);
-            }
-
-            .dropdown:hover > .dropdown-menu,
-            .sub-dropdown:hover > .sub-dropdown-menu {
-                display: none;
-            }
-
-            .dropdown.active > .dropdown-menu,
-            .sub-dropdown.active > .sub-dropdown-menu {
-                display: block;
-            }
-
-            .dropdown > a::after,
-            .sub-dropdown > a::after {
-                content: '▼';
-                float: right;
-                margin-left: 5px;
-                transition: transform 0.3s;
-            }
-
-            .dropdown.active > a::after,
-            .sub-dropdown.active > a::after {
-                transform: rotate(180deg);
-            }
-        }
-
-        @media (min-width: 993px) {
-            .menu {
-                position: static;
-                flex-direction: row;
-                width: auto;
-                height: auto;
-                padding: 0;
-                background: none;
-            }
-            
-            .dropdown-menu, .sub-dropdown-menu {
-                display: none;
-                position: absolute;
-            }
-            
-            .dropdown:hover > .dropdown-menu,
-            .sub-dropdown:hover > .sub-dropdown-menu {
-                display: block;
-            }
-        }
-    </style>
-
-    <style>
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            width: 100%;
-        }
-
-        .school-info {
-            text-align: center;
-            width: 100%;
-        }
-
-        .school-info h1 {
-            font-size: 1.8em;
-            margin-bottom: 5px;
-            width: 100%;
-        }
-
-        .hamburger {
-            position: absolute;
-            top: 30px;
-            right: 20px;
-        }
-
-        @media (min-width: 993px) {
-            .header-content {
-                flex-direction: row;
-                text-align: left;
-                position: relative;
-            }
-            .logo-container {
-                flex-direction: row;
-                justify-content: center;
-            }
-            .school-info {
-                text-align: left;
-            }
-            .hamburger {
-                display: none;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .header-content {
-                padding-bottom: 50px; /* Space for hamburger */
-            }
-            .school-info h1 {
-                font-size: 1.5em;
-                margin-top: 10px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .school-info h1 {
-                font-size: 1.3em;
-            }
-            .school-info p {
-                font-size: 0.9em;
-            }
-        }
-    </style>
-
     <script>
         const slides = document.querySelector('.slides');
         const slideCount = document.querySelectorAll('.slide').length;
@@ -667,21 +605,6 @@ document.getElementById('logoutButton').addEventListener('click', function () {
             });
 
 
-            // Toggle dropdowns on mobile
-            dropdowns.forEach(dropdown => {
-                const link = dropdown.querySelector('a');
-                link.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 992) {
-                        e.preventDefault();
-                        dropdown.classList.toggle('active');
-                        const submenu = dropdown.querySelector('> ul');
-                        if (submenu) {
-                            submenu.style.display = dropdown.classList.contains('active') ? 'block' : 'none';
-                        }
-                    }
-                });
-            });
-
             // Close menu when clicking outside
             document.addEventListener('click', function(e) {
                 if (window.innerWidth <= 992 && 
@@ -692,6 +615,9 @@ document.getElementById('logoutButton').addEventListener('click', function () {
                 }
             });
         });
+    </script>
+
+    <script>
         // Toggle mobile menu
         const hamburger = document.getElementById('hamburger');
         const menu = document.getElementById('menu');
@@ -751,7 +677,7 @@ document.getElementById('logoutButton').addEventListener('click', function () {
                     });
                 }
             }
-        });V
+        });
     </script>
 
 </body>
