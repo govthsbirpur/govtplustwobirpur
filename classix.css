@@ -145,7 +145,7 @@ body {
 .gandhi-image {
     flex: 1;
     height: 400px;
-    background-image: url(image/gandhijee.jpg);
+    background-image: url(gandhijee.jpg);
     background-size: cover;
     background-position: center;
     border-radius: 50%;
