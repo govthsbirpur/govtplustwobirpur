@@ -593,3 +593,72 @@ footer {
         margin: 15px;
     }
 }
+    /* Existing styles... */
+        
+        /* Hamburger Menu Styles */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            background-color: white;
+            transition: all 0.3s ease-in-out;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: #1e4d92;
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 80px;
+                transition: 0.3s ease-in-out;
+                z-index: 1000;
+            }
+
+            .menu.active {
+                right: 0;
+            }
+
+            .menu li {
+                margin: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .dropdown-menu, .sub-dropdown-menu {
+                position: static;
+                display: none;
+                width: 100%;
+                box-shadow: none;
+                background-color: rgba(0, 0, 0, 0.1);
+            }
+
+            .dropdown:hover > .dropdown-menu,
+            .sub-dropdown:hover > .sub-dropdown-menu {
+                display: none;
+            }
+
+            .dropdown.active > .dropdown-menu,
+            .sub-dropdown.active > .sub-dropdown-menu {
+                display: block;
+            }
+        }
